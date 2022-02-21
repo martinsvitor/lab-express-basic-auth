@@ -1,0 +1,24 @@
+<H1>Log in</H1>
+<div id="container">
+    {{#if passwordProblem}}
+       
+                <ul>
+            {{#each passwordProblem}}
+                    <li class="password-problem">{{this}}</li>
+            {{/each}}
+                </ul>
+        {{else}}
+        <div class="error-message">{{errorMessage}}</div>
+    {{/if}}
+    <form action="/login" method="post">
+        <label for="username">
+            <input type="text" name="username" placeholder="john123" id="username-border">
+        </label>
+        <label for="password">
+            <input type="password" name="password" placeholder="**********">
+        </label>
+        <button type="submit">login</button>
+    </form>
+    <p>Not registered yet?</p>
+    <a href="/signup">Register now</a>
+</div>

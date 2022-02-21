@@ -1,0 +1,24 @@
+<H1>Create an account</H1>
+<div id="container">
+    {{#if passwordProblem}}
+       
+                <ul>
+            {{#each passwordProblem}}
+                    <li class="password-problem">{{this}}</li>
+            {{/each}}
+                </ul>
+        {{else}}
+        <div class="error-message">{{errorMessage}}</div>
+    {{/if}}
+    <form action="/signup" method="post">
+        <label for="username">
+            <input required="true" type="text" name="username" placeholder="john123" id="username-border">
+        </label>
+        <label for="password">
+            <input required="true" type="password" name="password" placeholder="**********" minlength="8">
+        </label>
+        <button type="submit">Create</button>
+    </form>
+    <p>Already registered?</p>
+    <a href="/login">Login</a>
+</div>
